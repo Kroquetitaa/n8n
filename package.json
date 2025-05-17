@@ -8,7 +8,7 @@
   },
   "packageManager": "pnpm@10.2.1",
   "scripts": {
-    "prepare": "node scripts/prepare.mjs",
+    "prepare": "if [ \"$SKIP_LEFTHOOK\" != \"true\" ]; then node scripts/prepare.mjs; fi",
     "preinstall": "node scripts/block-npm-install.js",
     "build": "turbo run build",
     "build:backend": "turbo run build:backend",
